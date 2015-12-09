@@ -1,0 +1,9 @@
+{
+  "name": "NeApiExplorer",
+  "description": "ネクストエンジンAPIのお試し環境",
+  "keywords": [
+    "ネクストエンジン"
+  ],
+  "addons": [],
+  "env": {}
+}

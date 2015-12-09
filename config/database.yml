@@ -1,0 +1,22 @@
+default: &default
+  encoding: unicode
+  pool: 5
+  timeout: 5000
+
+development:
+  <<: *default
+  adapter: sqlite3
+  database: db/development.sqlite3
+
+test:
+  <<: *default
+  adapter: sqlite3
+  database: db/test.sqlite3
+  database: ne_api-explorer-rails_test
+
+production:
+  <<: *default
+  adapter: postgresql
+  database: ne_api-explorer-rails_production
+  username: ne_api-explorer-rails
+  password: <%= ENV['NE_API-EXPLORER-RAILS_DATABASE_PASSWORD'] %>

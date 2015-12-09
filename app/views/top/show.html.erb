@@ -1,0 +1,18 @@
+<h1>ネクストエンジンAPI</h1>
+
+<%= form_tag top_url, remote: true do %>
+	<h2>エンドポイント</h2>
+	<%= select_tag 'api[endpoint]', options_for_select(@endpoints) %>
+
+	<h2>取得項目</h2>
+	<%= text_area :api, :fields %>
+
+	<h2>検索条件・オフセット・リミット</h2>
+	<%= text_area :api, :query %>
+
+	<p><%= submit_tag '実行' %></p>
+<% end %>
+
+<h2>結果</h2>
+<div id="result"></div>
+

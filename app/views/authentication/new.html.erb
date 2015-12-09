@@ -1,0 +1,11 @@
+<h3>アプリのクライアントIDとクライアントシークレットを入力してください</h3>
+
+<%= form_tag authentication_new_url, method: :get do %>
+	<h2>クライアントID</h2>
+	<%= text_field_tag 'client_id' %>
+
+	<h2>クライアントシークレット</h2>
+	<%= text_field_tag 'client_secret' %>
+
+	<p><%= submit_tag '送信' %></p>
+<% end %>
