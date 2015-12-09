@@ -1,18 +1,36 @@
-<h1>ネクストエンジンAPI</h1>
+<h2>API実行</h2>
 
-<%= form_tag top_url, remote: true do %>
-	<h2>エンドポイント</h2>
-	<%= select_tag 'api[endpoint]', options_for_select(@endpoints) %>
+<%= form_tag top_url, remote: true, class: 'form-horizontal' do %>
+  <div class="form-group">
+    <label for="api[endpoint]" class="col-sm-3 control-label">エンドポイント</label>
+    <div class="col-sm-9">
+      <%= select_tag 'api[endpoint]', options_for_select(@endpoints), class: 'form-control' %>
+    </div>
+  </div>
 
-	<h2>取得項目</h2>
-	<%= text_area :api, :fields %>
+  <div class="form-group">
+    <label for="api[fields]" class="col-sm-3 control-label">取得項目</label>
+    <div class="col-sm-9">
+      <%= text_area :api, :fields, class: 'form-control' %>
+    </div>
+  </div>
 
-	<h2>検索条件・オフセット・リミット</h2>
-	<%= text_area :api, :query %>
+  <div class="form-group">
+    <label for="api[query]" class="col-sm-3 control-label">検索条件・オフセット・リミット</label>
+    <div class="col-sm-9">
+      <%= text_area :api, :query, class: 'form-control', rows: 5 %>
+     </div>
+  </div>
 
-	<p><%= submit_tag '実行' %></p>
+  <div class="form-group">
+    <div class="col-sm-offset-3 col-sm-9">
+      <p><%= submit_tag '実行', class: 'btn btn-default' %></p>
+    </div>
+  </div>
 <% end %>
 
-<h2>結果</h2>
+<hr>
+
+<h3>実行結果</h3>
 <div id="result"></div>
 
