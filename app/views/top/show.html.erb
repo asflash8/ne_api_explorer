@@ -11,14 +11,14 @@
   <div class="form-group">
     <label for="api[fields]" class="col-sm-3 control-label">取得項目</label>
     <div class="col-sm-9">
-      <%= text_area :api, :fields, class: 'form-control' %>
+      <%= text_area :api, :fields, class: 'form-control', placeholder: 'receive_order_shop_id,receive_order_id' %>
     </div>
   </div>
 
   <div class="form-group">
     <label for="api[query]" class="col-sm-3 control-label">検索条件・オフセット・リミット</label>
     <div class="col-sm-9">
-      <%= text_area :api, :query, class: 'form-control', rows: 5 %>
+      <%= text_area :api, :query, class: 'form-control', rows: 5, placeholder: '{"receive_order_shop_id-eq": 3, "limit": 3, "offset": 5}' %>
      </div>
   </div>
 
