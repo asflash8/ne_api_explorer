@@ -18,9 +18,9 @@ end
 
 group :test do
   gem 'minitest'
-  gem 'capybara'
+  # gem 'capybara'
 end
 
 group :production do
-  # gem 'puma'
+  gem 'puma'
 end
