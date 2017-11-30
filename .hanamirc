@@ -1,0 +1,3 @@
+project=ne_api_explorer
+test=minitest
+template=erb
