@@ -5,7 +5,9 @@
     <label for="api[endpoint]" class="col-sm-3 control-label">エンドポイント</label>
     <div class="col-sm-9">
       <select class="form-control">
-        <option value="1">APIのエンドポイント</option>
+        <% endpoints.each do |endpoint_name, endpoint| %>
+          <option value="<%= endpoint %>"><%= endpoint_name %></option>
+        <% end %>
       </select>
       <%#= select_tag 'api[endpoint]', options_for_select(@endpoints), class: 'form-control' %>
     </div>
