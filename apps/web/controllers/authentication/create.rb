@@ -14,8 +14,8 @@ module Web::Controllers::Authentication
 
     private
     def authentication_url
-      client_id          = params[:authentication][:client_id]
-      client_secret      = params[:authentication][:client_secret]
+      client_id          = params[:client_id]
+      client_secret      = params[:client_secret]
       authentication_url = "#{NeAPI::NE_SERVER_HOST}#{NeAPI::Auth::SIGN_IN_PATH}?client_id=#{client_id}&client_secret=#{client_secret}"
     end
   end
