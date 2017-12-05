@@ -6,3 +6,4 @@
 get '/', to: 'explorer#index'
 post '/', to: 'explorer#execute'
 get '/authentication/new', to: 'authentication#new'
+post '/authentication', to: 'authentication#create'
