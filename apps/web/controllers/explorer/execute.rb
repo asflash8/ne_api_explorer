@@ -1,7 +1,9 @@
 module Web::Controllers::Explorer
   class Execute
     include Web::Action
+    include Web::Controllers::Concerns::AuthFilter
 
+    before :authenticate!
     expose :endpoints, :result
 
     def call(params)
