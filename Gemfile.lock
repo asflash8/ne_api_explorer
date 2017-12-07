@@ -116,6 +116,7 @@ GEM
       launchy
       oauth
     oauth (0.5.3)
+    pg (0.21.0)
     public_suffix (3.0.1)
     puma (3.11.0)
     rack (2.0.3)
@@ -163,6 +164,7 @@ DEPENDENCIES
   hanami-model (~> 1.1)
   minitest
   ne_api
+  pg
   puma
   rake
   shotgun
