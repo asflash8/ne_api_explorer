@@ -7,9 +7,7 @@ module Web::Controllers::Explorer
     expose :endpoints, :result
 
     def call(params)
-      @endpoints = Endpoint.all.each_with_object({}){|(target, methods), obj|
-        methods.map{|method, name| obj[name] = target + "_" + method}
-      }
+      @endpoints = Endpoint.all_to_hash
 
       client = NeAPI::Master.new(
                  access_token: session["access_token"],
