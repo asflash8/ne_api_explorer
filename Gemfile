@@ -5,7 +5,6 @@ gem 'rake'
 gem 'hanami',       '~> 1.1'
 gem 'hanami-model', '~> 1.1'
 
-gem 'sqlite3'
 gem 'ne_api'
 
 group :development do
