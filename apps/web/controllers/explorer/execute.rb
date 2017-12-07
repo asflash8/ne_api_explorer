@@ -25,7 +25,7 @@ module Web::Controllers::Explorer
         request_params.merge!(query)  if query.present?
         request_params.merge!(fields) if fields.present?
 
-        @result = client.send(endpoint, request_params || {}).to_json
+        @result = JSON.pretty_generate(client.send(endpoint, request_params || {}))
       end
     end
   end
