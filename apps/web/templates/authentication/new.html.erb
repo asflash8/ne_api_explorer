@@ -1,0 +1,25 @@
+<h2>アプリ認証</h2>
+
+<%=
+  form_for :authentication, '/authentication/new', class: 'form-horizontal' do
+    div class: 'form-group' do
+      label 'クライアントID', for: 'authentication-client-id', class: 'col-sm-3 control-label'
+      div class: 'col-sm-9' do
+        text_field 'client_id', class: 'form-control'
+      end
+    end
+
+    div class: 'form-group' do
+      label 'クライアントシークレット', for: 'authentication-client-secret', class: 'col-sm-3 control-label'
+      div class: 'col-sm-9' do
+        text_field 'client_secret', class: 'form-control'
+      end
+    end
+
+    div class: 'form-group' do
+      div class: 'col-sm-offset-3 col-sm-9' do
+        submit '送信', class: 'btn btn-default'
+      end
+    end
+  end
+%>

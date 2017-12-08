@@ -1,0 +1,38 @@
+<h2>API実行</h2>
+
+<%=
+  # http://hanamirb.org/guides/helpers/forms/
+  form_for :endpoint, '/', class: 'form-horizontal' do
+    div class: 'form-group' do
+      label 'エンドポイント', for: 'endpoint-url', class: 'col-sm-3 control-label'
+      div class: 'col-sm-9' do
+        select :url, endpoints, class: 'form-control'
+      end
+    end
+
+    div class: 'form-group' do
+      label 'フィールド', for: 'endpoint-fields', class: 'col-sm-3 control-label'
+      div class: 'col-sm-9' do
+        text_area :fields, class: 'form-control', placeholder: h('receive_order_shop_id,receive_order_id')
+      end
+    end
+
+    div class: 'form-group' do
+      label 'クエリ', for: 'endpoint-query', class: 'col-sm-3 control-label'
+      div class: 'col-sm-9' do
+        text_area :query, class: 'form-control', placeholder: h('{"receive_order_shop_id-eq": 3, "limit": 3, "offset": 5}'), rows: 5
+      end
+    end
+
+    div class: 'form-group' do
+      div class: 'col-sm-offset-3 col-sm-9' do
+        submit '実行', class: 'btn btn-default'
+      end
+    end
+  end
+%>
+
+<hr>
+
+<h2>実行結果</h2>
+<pre ><%= h result %></pre>

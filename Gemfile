@@ -1,32 +1,29 @@
 source 'https://rubygems.org'
-ruby '2.2.6'
+ruby '~> 2.4.2'
 
-gem 'rails', '~> 5.0'
-gem 'pg', '~> 0.15'
-gem 'sass-rails', '~> 5.0'
-gem 'uglifier', '>= 1.3.0'
-gem 'coffee-rails', '~> 4.2.1'
-
-gem 'jquery-rails'
-gem 'jbuilder', '~> 2.6'
-gem 'sdoc', '~> 0.4.0', group: :doc
-
-gem 'bcrypt', '~> 3.1.7'
+gem 'rake'
+gem 'hanami',       '~> 1.1'
+gem 'hanami-model', '~> 1.1'
 
 gem 'ne_api'
 
-group :production do
-  gem 'rails_12factor'
-end
-
-group :development, :test do
-  gem 'sqlite3'
-  gem 'byebug'
-  gem 'therubyracer', platform: :ruby
-end
-
 group :development do
-  gem 'web-console', '~> 3.0'
-  gem 'spring'
+  # Code reloading
+  # See: http://hanamirb.org/guides/projects/code-reloading
+  gem 'shotgun'
 end
 
+group :test, :development do
+  gem 'dotenv', '~> 2.0'
+  gem 'sqlite3'
+end
+
+group :test do
+  gem 'minitest'
+  # gem 'capybara'
+end
+
+group :production do
+  gem 'puma'
+  gem 'pg'
+end
